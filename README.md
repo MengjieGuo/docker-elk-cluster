@@ -1,2 +1,2 @@
 # docker-elk-cluster
-Elastic Stack multi node cluster based on Docker
+Multi node Elastic Stack cluster with Docker
