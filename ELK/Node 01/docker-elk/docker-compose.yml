@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    build: elasticsearch/
+    container_name: elasticsearch
+    restart: unless-stopped
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - /data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    network_mode: "host"
+    environment:
+      ES_JAVA_OPTS: "-Xmx16g -Xms16g"
+
+  logstash:
+    build: logstash/
+    container_name: logstash
+    restart: unless-stopped
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    ports:
+      - "5505:5505"
+      - "5506:5506"
+      - "5507:5507"
+    network_mode: "host"
+    environment:
+      LS_JAVA_OPTS: "-Xmx8g -Xms8g"
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build: kibana/
+    container_name: kibana
+    restart: unless-stopped
+    volumes:
+      - ./kibana/config/:/usr/share/kibana/config
+    ports:
+      - "5601:5601"
+    network_mode: "host"
+    depends_on:
+      - elasticsearch

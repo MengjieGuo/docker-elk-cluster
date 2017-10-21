@@ -1,0 +1,22 @@
+---
+## Default Kibana configuration from kibana-docker.
+## from https://github.com/elastic/kibana-docker/blob/master/build/kibana/config/kibana.yml
+#
+server.name: kibana
+server.host: "0"
+elasticsearch.url: http://localhost:9200
+
+## Disable X-Pack
+## see https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html
+##     https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html#xpack-enabling
+#
+xpack.security.enabled: false
+xpack.monitoring.enabled: false
+xpack.ml.enabled: false
+xpack.graph.enabled: false
+xpack.reporting.enabled: false
+
+## Increase default search timeout from 30 sec to 5 min
+## see https://www.elastic.co/guide/en/kibana/5.5/settings.html
+#
+elasticsearch.requestTimeout: 300000

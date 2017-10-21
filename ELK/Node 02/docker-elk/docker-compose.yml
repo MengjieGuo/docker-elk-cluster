@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    build: elasticsearch/
+    container_name: elasticsearch
+    restart: unless-stopped
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - /data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    network_mode: "host"
+    environment:
+      ES_JAVA_OPTS: "-Xmx16g -Xms16g"
