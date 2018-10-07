@@ -1,8 +1,8 @@
-# docker-elk-cluster example
+# docker-elk-cluster
 Elastic Stack multi-node cluster with Docker Compose.
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Prerequisites
 
 We need to set the **vm.max_map_count** kernel parameter:
