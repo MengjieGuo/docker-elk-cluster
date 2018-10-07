@@ -1,4 +1,4 @@
-# docker-elk-cluster
+# docker-elk-cluster example
 Elastic Stack multi-node cluster with Docker Compose.
 
-<!-- ![Screenshot](ELK-Diagram.png) -->
+[Screenshot](multi-node-elk-cluster.png)
