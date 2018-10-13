@@ -10,11 +10,11 @@ It is required to adjust the **vm.max_map_count** kernel parameter:
 ```
 sudo sysctl -w vm.max_map_count=262144
 ```
-To set this permanently, add it to **/etc/sysctl.conf** and reload with **sudo sysctl -p**
+To set this permanently, add it to `/etc/sysctl.conf` and reload with `sudo sysctl -p`
 
 ### Deployment
 
-Run the following command to spin up your ELK cluster:
+Run the following command in the *docker-elk* directory to spin up ELK cluster:
 
 ```
 docker-compose up -d
