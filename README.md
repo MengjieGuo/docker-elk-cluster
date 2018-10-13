@@ -14,7 +14,7 @@ To set this permanently, add it to `/etc/sysctl.conf` and reload with `sudo sysc
 
 ### Deployment
 
-Run the following command in the *docker-elk* directory to spin up ELK cluster:
+Run the following command in the `docker-elk` directory to spin up ELK cluster:
 
 ```
 docker-compose up -d
